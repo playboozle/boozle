@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirect</title>
   <script>
-    if (window.location.pathname === '/.well-known/apple-developer-merchantid-domain-association') {
-      window.location.href = 'https://playboozle.github.io/boozle/.well-known/apple-developer-merchantid-domain-association';
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.location.pathname === '/.well-known/apple-developer-merchantid-domain-association') {
+        window.location.replace('https://playboozle.github.io/boozle/.well-known/apple-developer-merchantid-domain-association');
+      } else if (window.location.pathname === '/.well-known/apple-developer-merchantid-domain-association.txt') {
+        window.location.replace('https://playboozle.github.io/boozle/.well-known/apple-developer-merchantid-domain-association.txt');
+      }
+    });
   </script>
 </head>
 <body>
